@@ -17,7 +17,7 @@ const SavedTrip = () => {
        useEffect(()=>{
           const fetchSavedTrips = async()=>{
              try {
-                const response = await axios.get(`http://localhost:5000/api/trip/getsavedtrip/${id}`,{withCredentials:true});
+                const response = await axios.get(`https://ai-trip-planner-backend-bwb4.onrender.com/api/trip/getsavedtrip/${id}`,{withCredentials:true});
                 if(response.data){
                     // console.log('savedtrips',response.data.savedtrips);
                     setsavedtrip(response.data.savedtrips)
