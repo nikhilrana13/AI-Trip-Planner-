@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use(cors(
     {
-        origin:["https://ai-trip-planner-frontend.onrender.com","http://localhost:5174"],
+        origin:"https://ai-trip-planner-frontend.onrender.com"
         credentials:true
     }
 ));
