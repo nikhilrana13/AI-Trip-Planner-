@@ -5,6 +5,8 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import userRoute from "./routes/userRoute.js";
 import tripRoute from "./routes/TripRoute.js";
+import Path from "path"
+
 
 
 
@@ -21,6 +23,7 @@ app.use(cors(
     }
 ));
 
+const _dirname = Path.resolve();
 
 // middlewares //
 app.use(express.json());
@@ -28,13 +31,14 @@ app.use(express.urlencoded({extended:true}))
 app.use(cookieParser());
 
 
-
-
-
-
 // routes //
 app.use('/api/user',userRoute);
 app.use('/api/trip',tripRoute)
+
+app.use(express.static(Path.join(_dirname,'../frontend/dist')));
+app.get('*',(_,res)=>{
+    res.sendFile(Path.join(_dirname,"frontend","dist","index.html"));
+})
 
 
 

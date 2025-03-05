@@ -25,7 +25,7 @@ const Login = () => {
 
           try {
               const res = await axios.post("http://localhost:5000/api/user/login",userinfo,{withCredentials:true});
-              if(res.data){
+              if(res?.data){
                 toast.success(res.data.message,{autoClose:2000} || 'Login successfully', );
                 dispatch(SetAuthUser(res.data.user))
                 navigate('/')
