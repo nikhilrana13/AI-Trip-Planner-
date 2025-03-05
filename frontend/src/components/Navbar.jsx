@@ -13,7 +13,7 @@ const Navbar = () => {
   const dispatch = useDispatch();
 
 const handleLogout = async ()=>{
-       await axios.get("https://ai-trip-planner-backend-bwb4.onrender.com/api/user/logout",{withCredentials:true}).then((res)=>{
+       await axios.get("http://localhost:5000/api/user/logout",{withCredentials:true}).then((res)=>{
         if(res.data){
           toast.success(res.data.message,{autoClose:2000} || 'Logout successfully', );
           dispatch(SetAuthUser(null))
