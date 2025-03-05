@@ -24,7 +24,7 @@ const Login = () => {
           }
 
           try {
-              const res = await axios.post("http://localhost:5000/api/user/login",userinfo,{withCredentials:true});
+              const res = await axios.post("https://ai-trip-planner-backend-bwb4.onrender.com/api/user/login",userinfo,{withCredentials:true});
               if(res.data){
                 toast.success(res.data.message,{autoClose:2000} || 'Login successfully', );
                 dispatch(SetAuthUser(res.data.user))
