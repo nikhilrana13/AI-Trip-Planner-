@@ -14,7 +14,7 @@ const Tripdetails = () => {
      useEffect(()=>{
            const fetchDetails = async()=>{
             try {
-                const res = await axios.get(`https://ai-trip-planner-backend-bwb4.onrender.com/api/trip/gettrip/${id}`,{withCredentials:true});
+                const res = await axios.get(`http://localhost:5000/api/trip/gettrip/${id}`,{withCredentials:true});
                 if(res.data.trip){
                     // console.log('trip',res.data.trip);
                     setTrip(res.data.trip);
