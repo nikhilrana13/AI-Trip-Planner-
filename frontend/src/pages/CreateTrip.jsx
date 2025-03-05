@@ -34,7 +34,7 @@ const CreateTrip = () => {
        
                  try {
                   setloading(true)
-                  const res = await axios.post(`https://ai-trip-planner-backend-bwb4.onrender.com/api/trip/createtrip/${id}`,formdata,{
+                  const res = await axios.post(`http://localhost:5000/api/trip/createtrip/${id}`,formdata,{
                       headers:{"Content-Type":"application/json"},withCredentials:true
                       
                   });
