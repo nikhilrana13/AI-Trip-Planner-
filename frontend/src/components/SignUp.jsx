@@ -21,7 +21,7 @@ const SignUp = () => {
           }
 
            try {
-            const res = await axios.post("https://ai-trip-planner-backend-bwb4.onrender.com/api/user/signup",userinfo,{withCredentials:true});
+            const res = await axios.post("http://localhost:5000/api/user/signup",userinfo,{withCredentials:true});
             if(res.data){
                toast.success(res.data.message,{autoClose:2000} || 'Signup successfully', );
                reset();
